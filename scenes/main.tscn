@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwatepjsjefbv"]
+
+[ext_resource type="PackedScene" uid="uid://bf4v6dke07k2l" path="res://scenes/player.tscn" id="1_a3th5"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_4gvry"]
+
+[sub_resource type="Gradient" id="Gradient_ppsa2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sfw7y"]
+gradient = SubResource("Gradient_ppsa2")
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 11)
+scale = Vector2(1, 0.34375)
+texture = SubResource("GradientTexture2D_sfw7y")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_a3th5")]
+position = Vector2(0, -10)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+script = ExtResource("2_4gvry")
